@@ -1,0 +1,112 @@
+body{
+    background-color: #222222;
+    min-height: 100vh;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    margin-left: 25vh;
+}
+.anillo{
+    height: 150px;
+    width: 150px;
+    border: 10px solid crimson; 
+    border-color: crimson transparent transparent transparent;
+    box-sizing: border-box; 
+    border-radius: 50%;
+    position: absolute;
+}
+
+.anillo:nth-child(1){
+   transform: rotate(-50deg);
+   animation: animate1 2s linear infinite;
+}
+
+.anillo:nth-child(2){
+    margin-left: 140px;
+   transform: rotate(225deg);
+   animation: animate2 2s linear infinite;
+}
+.anillo:nth-child(3){
+   transform: rotate(-50deg);
+   animation: animate3 2s linear infinite;
+   margin-left: 280px;
+}
+
+/* primera animacion 0 a 9.083
+   segunda animacion 9.083 a 18.166
+   tercera animacion 18.166 a 27.249
+   cuarta animacion 27.249 a 36.332
+   sexta animacion 36.332 a 45.415 
+   septima animacion 45.415 a 54.498
+   octaca animacion 54.498 a 63.581
+   novena animacion 63.581 a 72.664
+   decima animacion 72.664 a 81.747
+   onceava animacion 81.747 a 90.833
+   doceava animacion 90.833 a 100*/
+@keyframes animate1{
+    0%{transform: rotate(-50deg);clip:rect(0px,150px,150px,0px);border-color: crimson transparent transparent transparent;/*box-shadow: 0px -16px 3px -12px rgb(129, 4, 29);*/}
+    9.083%{transform: rotate(50deg);clip:rect(0px,150px,150px,25px)}
+    18.166%{transform: rotate(50deg);clip:rect(0px,150px,150px,150px);}
+    20%{border-color: rgb(213, 20, 220) transparent transparent transparent;}
+    60%{border-color: rgb(20, 220, 47) transparent transparent transparent;}
+    72.664%{transform: rotate(140deg);clip:rect(0px,0px,150px,0px)}
+    80%{border-color: rgb(190, 220, 20) transparent transparent transparent;}
+    81.747%{transform: rotate(140deg);clip:rect(0px,150px,150px,0px)}
+    100%{transform: rotate(310deg);border-color: crimson transparent transparent transparent;}
+}
+@keyframes animate2{
+    0%,8.083%{transform: rotate(225deg);clip:rect(0px,150px,150px,150px) }
+    18.166%{transform: rotate(225deg);clip:rect(0px,150px,150px,0px)}
+    20%{border-color: rgb(213, 20, 220) transparent transparent transparent;}
+    27.249%{transform: rotate(135deg);clip:rect(0px,150px,150px,0px)}
+    36.332%{transform: rotate(135deg);clip:rect(0px,0px,150px,0px); }
+    36.333%,54.498%{transform:rotate(45deg);clip:rect(0px,0px,150px,0px)}
+    40%{border-color: rgb(20, 90, 220) transparent transparent transparent;}
+    54.498%{transform:rotate(45deg);clip:rect(0px,150px,150px,150px); }
+    60%{border-color: rgb(20, 220, 47) transparent transparent transparent;}
+    63.581%{transform:rotate(45deg);clip:rect(0px,150px,150px,0px)}
+    72.664%,81.747%{transform:rotate(-50deg);clip:rect(0px,150px,150px,0px)}
+    80%{border-color: rgb(190, 220, 20) transparent transparent transparent;}
+    81.747%,100%{transform: rotate(-50deg);clip:rect(0px,0px,150px,0px)}
+}
+@keyframes animate3{
+    0%,26.249%{transform: rotate(-50deg);clip:rect(0px,0px,150px,0px)}
+    36.332%{transform: rotate(-50deg);clip:rect(0px,150px,150px,0px)}
+    40%{border-color: rgb(20, 90, 220) transparent transparent transparent;}
+    54.498%{transform: rotate(225deg);clip:rect(0px,150px,150px,0px); }
+    60%{border-color: rgb(20, 220, 47) transparent transparent transparent;}
+    63.581%, 100%{transform: rotate(225deg);clip:rect(0px,150px,150px,150px)}
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    position: relative;
+  }
+  
+  .loader:before, .loader:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: #FFC107;
+    width: 10px;
+    height: 40px;
+    border-radius: 5px;
+    animation: loader 1s ease-in-out infinite;
+  }
+  
+  .loader:before {
+    animation-delay: -0.2s;
+  }
+  
+  .loader:after {
+    animation-delay: 0.2s;
+  }
+  
